@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: techsolutions-app
+  name: primeapp-app
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/KastroVKiran/microservices-ingress-kastro.git
+    repoURL: https://github.com/gauravumrane29/microservices-ingress-kastro.git
     targetRevision: HEAD
     path: k8s
   destination:
