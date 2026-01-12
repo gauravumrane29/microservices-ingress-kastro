@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: techsolutions-deployment
+  name: primeapp-deployment
   namespace: default
   labels:
-    app: techsolutions
+    app: primeapp
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: techsolutions
+      app: primeapp
   template:
     metadata:
       labels:
-        app: techsolutions
+        app: primeapp
     spec:
       containers:
-      - name: techsolutions
-        image: kastrov/techsolutions-app:latest
+      - name: primeapp
+        image: gaurav0934/primeapp:latest
         ports:
         - containerPort: 80
         resources:
@@ -43,10 +43,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: techsolutions-service
+  name: primeapp-service
   namespace: default
   labels:
-    app: techsolutions
+    app: primeapp
 spec:
   type: ClusterIP
   ports:
@@ -54,4 +54,4 @@ spec:
     targetPort: 80
     protocol: TCP
   selector:
-    app: techsolutions
+    app: primeapp
